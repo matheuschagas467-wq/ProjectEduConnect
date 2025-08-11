@@ -18,6 +18,21 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: [
+					"Poppins",
+					"ui-sans-serif",
+					"system-ui",
+					"Segoe UI",
+					"Roboto",
+					"Helvetica Neue",
+					"Arial",
+					"Noto Sans",
+					"Apple Color Emoji",
+					"Segoe UI Emoji",
+					"Segoe UI Symbol",
+				],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -35,6 +50,10 @@ export default {
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))',
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
