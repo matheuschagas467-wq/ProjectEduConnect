@@ -15,7 +15,7 @@ export default function CalendarPage() {
     { id: "1", date: new Date(), title: "Reunião de Pais", type: "Reunião" },
     { id: "2", date: new Date(2025, 7, 21), title: "Apresentação EduConnect", type: "Apresentação" }
 ]);
-  ]);
+
 
   const dayEvents = useMemo(() =>
     events.filter((e) => selected && e.date.toDateString() === selected.toDateString()),
