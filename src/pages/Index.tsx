@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
 const Index = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "Portal da Rede — Escolha de Perfil";
   }, []);
-
-  return (
-    <main className="min-h-screen flex items-center justify-center bg-background">
+  return <main className="min-h-screen flex items-center justify-center bg-slate-900">
       <section className="container text-center py-20">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Acesse o Portal da Rede</h1>
         <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -25,8 +21,6 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </main>
-  );
+    </main>;
 };
-
 export default Index;
