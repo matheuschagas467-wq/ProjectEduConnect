@@ -13,10 +13,8 @@ const Index = () => {
           Selecione seu perfil para continuar. Interface responsiva para pais/responsáveis e professores.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <Button size="lg" onClick={() => navigate("/login/parents")}>Sou Responsável</Button>
-          <Button size="lg" variant="secondary" onClick={() => navigate("/login/teachers")}>
-            Sou Professor/Profissional
-          </Button>
+          <Button size="lg" onClick={() => navigate("/login/parents")} className="bg-cyan-600 hover:bg-cyan-500">Sou Responsável</Button>
+          <Button size="lg" variant="secondary" onClick={() => navigate("/login/teachers")} className="text-[t40E0D0] text-black bg-cyan-600 hover:bg-cyan-500">Sou Docente</Button>
         </div>
       </section>
     </main>;
