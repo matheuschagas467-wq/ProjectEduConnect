@@ -6,7 +6,7 @@ const Index = () => {
   useEffect(() => {
     document.title = "Portal da Rede — Escolha de Perfil";
   }, []);
-  return <main className="min-h-screen flex items-center justify-center bg-slate-900">
+  return <main className="min-h-screen flex items-center justify-center bg-slate-50">
       <section className="container text-center py-20">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Acesse o Portal da Rede</h1>
         <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
