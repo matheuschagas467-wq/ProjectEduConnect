@@ -1,27 +1,67 @@
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { Header } from "@/components/site/Header";
+import { HeroSection } from "@/components/site/HeroSection";
+import { UserTypeCard } from "@/components/site/UserTypeCard";
+import { Footer } from "@/components/site/Footer";
+import { Icons } from "@/components/ui/icons";
+
 const Index = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
-    document.title = "Portal da Rede — Escolha de Perfil";
+    document.title = "EduConnect — Bem-vindo";
   }, []);
-  return <main className="min-h-screen flex items-center justify-center bg-background">
-      <section className="container text-center py-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Acesse o Portal da Rede</h1>
-        <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">Selecione seu perfil para continuar. Interface responsiva para Responsáveis e Docentes.</p>
-        <div className="mb-6 text-2xl font-bold tracking-tight">
-          <span className="text-primary">Edu</span>Connect
-        </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <Button size="lg" onClick={() => navigate("/login/parents")}>
-            Sou Responsável de Aluno
-          </Button>
-          <Button size="lg" variant="secondary" onClick={() => navigate("/login/teachers")}>
-            Sou Professor/Profissional
-          </Button>
-        </div>
-      </section>
-    </main>;
+
+  const parentBenefits = [
+    "Acompanhar notas e frequência",
+    "Receber comunicados da escola", 
+    "Agendar reuniões com professores",
+    "Visualizar calendário escolar"
+  ];
+
+  const teacherBenefits = [
+    "Gerenciar turmas e disciplinas",
+    "Lançar notas e frequência",
+    "Compartilhar material didático", 
+    "Comunicar-se com responsáveis"
+  ];
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      <Header />
+      
+      <main className="flex-1">
+        <HeroSection />
+        
+        <section className="pb-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <UserTypeCard
+                title="Sou Responsável"
+                description="Acompanhe o desempenho escolar do seu filho, receba notificações importantes e mantenha-se conectado com a escola."
+                icon={Icons.users}
+                benefits={parentBenefits}
+                buttonText="Cadastrar como Responsável"
+                onSelect={() => navigate("/login/parents")}
+              />
+              
+              <UserTypeCard
+                title="Sou Docente"
+                description="Gerencie suas turmas, registre avaliações, compartilhe conteúdos e acompanhe o progresso dos seus alunos."
+                icon={Icons.teacher}
+                benefits={teacherBenefits}
+                buttonText="Cadastrar como Docente"
+                onSelect={() => navigate("/login/teachers")}
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
+  );
 };
+
 export default Index;
