@@ -13,7 +13,7 @@ export default function CalendarPage() {
   const [selected, setSelected] = useState<Date | undefined>(new Date());
   const [events, setEvents] = useState<EventItem[]>([
     { id: "1", date: new Date(), title: "Reunião de Pais", type: "Reunião" },
-    { id: "2", date: new Date(2025, 7, 21), title: "Apresentação EduConnect", type: "Apresentação" }
+    { id: "2", date: new Date(2025, 7, 21), title: "Apresentação EduConnect", type: "Apresentação" },
     { id: "3", date: new Date(2025, 7, 30), title: "Sábado Letivo", type: "Aula" }
   ]);
 
