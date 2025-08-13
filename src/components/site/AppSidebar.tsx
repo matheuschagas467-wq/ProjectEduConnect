@@ -25,7 +25,6 @@ export function AppSidebar() {
   const parentItems = [
     { title: "Dashboard", url: `${baseParent}/dashboard`, icon: BarChart3 },
     { title: "Cronograma", url: `${baseParent}/calendar`, icon: Calendar },
-    { title: "Comunicação", url: `${baseParent}/chat`, icon: MessageSquare },
     { title: "Desempenho", url: `${baseParent}/performance`, icon: ClipboardList },
     { title: "Configurações", url: `${baseParent}/settings`, icon: Settings },
     { title: "Sobre/Contato", url: `/app/about`, icon: Info },
