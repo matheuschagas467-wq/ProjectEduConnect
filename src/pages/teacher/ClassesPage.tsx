@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import { Link } from "react-router-dom";
 interface Classe { id: string; nome: string; alunos: number }
 
 export default function ClassesPage() {
@@ -27,8 +27,13 @@ export default function ClassesPage() {
           <ul className="space-y-2 text-sm">
             {classes.map((c) => (
               <li key={c.id} className="flex items-center justify-between border rounded px-3 py-2">
-                <div className="font-medium">{c.nome}</div>
-                <div className="text-muted-foreground">{c.alunos} alunos</div>
+                <div>
+                  <div className="font-medium">{c.nome}</div>
+                  <div className="text-muted-foreground">{c.alunos} alunos</div>
+                </div>
+                <Link to={`/app/teacher/classes/${encodeURIComponent(c.nome)}`}>
+                  <Button variant="secondary">Ver alunos</Button>
+                </Link>
               </li>
             ))}
           </ul>

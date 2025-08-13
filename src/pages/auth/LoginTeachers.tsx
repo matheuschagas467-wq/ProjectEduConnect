@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "sonner";
 export default function LoginTeachers() {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -15,15 +15,24 @@ export default function LoginTeachers() {
     document.title = "Login — Professores";
   }, []);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    login(email, password, "teacher");
-    navigate("/app/teacher/dashboard");
+    try {
+      await Promise.resolve(login(email, password, "teacher"));
+      navigate("/app/teacher/dashboard");
+    } catch (err: any) {
+      toast.error(err?.message || "Não foi possível entrar. Verifique os dados.");
+    }
   };
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-background">
       <section className="w-full max-w-md bg-card border rounded-lg p-6 shadow-sm">
+        <div className="mb-4 text-center">
+          <div className="text-2xl font-bold tracking-tight">
+            <span className="text-primary">Edu</span>Connect
+          </div>
+        </div>
         <h1 className="text-2xl font-semibold mb-1">Acesso — Professores</h1>
         <p className="text-sm text-muted-foreground mb-6">Entre com seu e-mail e senha.</p>
         <form onSubmit={onSubmit} className="space-y-4">

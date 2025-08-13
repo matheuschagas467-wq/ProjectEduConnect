@@ -20,7 +20,7 @@ import SettingsPage from "./pages/common/SettingsPage";
 import AboutPage from "./pages/common/AboutPage";
 import ClassesPage from "./pages/teacher/ClassesPage";
 import GradesPage from "./pages/teacher/GradesPage";
-
+import ClassDetailsPage from "./pages/teacher/ClassDetailsPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -55,6 +55,7 @@ const App = () => (
                 <Route path="grades" element={<GradesPage />} />
                 <Route path="calendar" element={<CalendarPage />} />
                 <Route path="chat" element={<ChatPage />} />
+                <Route path="classes/:name" element={<ClassDetailsPage />} />
                 <Route path="settings" element={<SettingsPage />} />
               </Route>
             </Route>

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from "react";
+import { students } from "@/data/students";
 
 export type Role = "parent" | "teacher";
 
@@ -19,7 +20,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
   const login = (email: string, _password: string, role: Role) => {
-    // Demo only. For secure auth, connect Supabase and verify credentials.
+    // Parent login uses: email => registration number, _password => CPF (digits only)
+    if (role === "parent") {
+      const registration = email.trim();
+      const cpfDigits = (_password || "").replace(/\D/g, "");
+      const match = students.find(
+        (s) => s.registration === registration && s.responsibleCpf === cpfDigits
+      );
+      if (!match) {
+        throw new Error("Matrícula ou CPF inválidos.");
+      }
+      setUser({ email: `${registration}@responsavel`, role });
+      return;
+    }
+
+    // Teacher login: simple demo validation
+    if (!email.includes("@") || (_password || "").length < 4) {
+      throw new Error("Credenciais inválidas.");
+    }
     setUser({ email, role });
   };
 
