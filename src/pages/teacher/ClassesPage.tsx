@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 interface Classe { id: string; nome: string; alunos: number }
 
 export default function ClassesPage() {
+  const navigate = useNavigate();
   const [classes, setClasses] = useState<Classe[]>([
     { id: "c1", nome: "5º A", alunos: 28 },
     { id: "c2", nome: "5º B", alunos: 26 },
@@ -18,7 +20,18 @@ export default function ClassesPage() {
 
   return (
     <main>
-      <h1 className="text-2xl font-semibold mb-6">Gerenciar Turmas</h1>
+      <div className="flex items-center gap-4 mb-6">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => navigate("/app/teacher/dashboard")}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Voltar
+        </Button>
+        <h1 className="text-2xl font-semibold">Gerenciar Turmas</h1>
+      </div>
       <Card>
         <CardHeader>
           <CardTitle>Turmas</CardTitle>

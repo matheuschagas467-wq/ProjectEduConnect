@@ -1,10 +1,13 @@
 import { useEffect, useMemo } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { students } from "@/data/students";
+import { ArrowLeft } from "lucide-react";
 
 export default function ClassDetailsPage() {
   const params = useParams();
+  const navigate = useNavigate();
   const className = useMemo(() => decodeURIComponent(params.name || ""), [params.name]);
   const list = useMemo(() => students.filter((s) => s.className === className), [className]);
 
@@ -14,9 +17,17 @@ export default function ClassDetailsPage() {
 
   return (
     <main>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center gap-4 mb-6">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => navigate("/app/teacher/classes")}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Voltar
+        </Button>
         <h1 className="text-2xl font-semibold">Turma {className}</h1>
-        <Link to="/app/teacher/classes" className="text-sm text-primary">Voltar</Link>
       </div>
       <Card>
         <CardHeader>
