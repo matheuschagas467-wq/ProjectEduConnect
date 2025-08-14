@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
+import PageNavigation from "@/components/common/PageNavigation";
 
 interface Msg { id: string; author: string; text: string; ts: number; }
 
@@ -62,6 +63,7 @@ export default function ChatPage() {
 
   return (
     <main>
+      <PageNavigation />
       <h1 className="text-2xl font-semibold mb-6">Comunicação</h1>
       <Card>
         <CardHeader>

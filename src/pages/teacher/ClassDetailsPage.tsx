@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { students } from "@/data/students";
 import { ArrowLeft } from "lucide-react";
+import PageNavigation from "@/components/common/PageNavigation";
 
 export default function ClassDetailsPage() {
   const params = useParams();
@@ -17,18 +18,8 @@ export default function ClassDetailsPage() {
 
   return (
     <main>
-      <div className="flex items-center gap-4 mb-6">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => navigate("/app/teacher/classes")}
-          className="flex items-center gap-2"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Voltar
-        </Button>
-        <h1 className="text-2xl font-semibold">Turma {className}</h1>
-      </div>
+      <PageNavigation />
+      <h1 className="text-2xl font-semibold mb-6">Turma {className}</h1>
       <Card>
         <CardHeader>
           <CardTitle>Alunos matriculados ({list.length})</CardTitle>

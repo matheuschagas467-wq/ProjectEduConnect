@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/contexts/AuthContext";
+import PageNavigation from "@/components/common/PageNavigation";
 
 interface EventItem { id: string; date: Date; title: string; type: string; }
 
@@ -41,6 +42,7 @@ export default function CalendarPage() {
 
   return (
     <main>
+      <PageNavigation />
       <h1 className="text-2xl font-semibold mb-6">Cronograma Escolar</h1>
       <section className="grid gap-6 md:grid-cols-3">
         <Card className="md:col-span-2">

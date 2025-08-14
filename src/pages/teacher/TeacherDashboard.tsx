@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Users, ClipboardList, Calendar, MessageSquare } from "lucide-react";
+import PageNavigation from "@/components/common/PageNavigation";
 
 export default function TeacherDashboard() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function TeacherDashboard() {
 
   return (
     <main>
+      <PageNavigation />
       <h1 className="text-2xl font-semibold mb-6">Visão Geral</h1>
       <section className="grid gap-6 md:grid-cols-2">
         <Card>

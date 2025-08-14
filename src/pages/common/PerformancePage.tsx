@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import { useAuth } from "@/contexts/AuthContext";
+import PageNavigation from "@/components/common/PageNavigation";
 
 const data = [
   { mes: "Jan", nota: 7.2 },
@@ -20,6 +21,7 @@ export default function PerformancePage() {
 
   return (
     <main>
+      <PageNavigation />
       <h1 className="text-2xl font-semibold mb-6">{user?.role === "parent" ? "Desempenho do Aluno" : "Desempenho da Turma"}</h1>
       <Card>
         <CardHeader>

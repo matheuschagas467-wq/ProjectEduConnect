@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { students } from "@/data/students";
 import { ArrowLeft, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import PageNavigation from "@/components/common/PageNavigation";
 
 export default function CommunicationPage() {
   const navigate = useNavigate();
@@ -58,18 +59,8 @@ export default function CommunicationPage() {
 
   return (
     <main>
-      <div className="flex items-center gap-4 mb-6">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => navigate("/app/teacher/dashboard")}
-          className="flex items-center gap-2"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Voltar
-        </Button>
-        <h1 className="text-2xl font-semibold">Sistema de Comunicação</h1>
-      </div>
+      <PageNavigation />
+      <h1 className="text-2xl font-semibold mb-6">Sistema de Comunicação</h1>
 
       <Card className="max-w-2xl">
         <CardHeader>

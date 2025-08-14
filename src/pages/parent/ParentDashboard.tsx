@@ -4,12 +4,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BarChart, MessageSquare, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import PageNavigation from "@/components/common/PageNavigation";
+
 export default function ParentDashboard() {
   const navigate = useNavigate();
   useEffect(() => {
     document.title = "Dashboard — Pais";
   }, []);
   return <main>
+      <PageNavigation />
       <h1 className="text-2xl font-semibold mb-6">Visão Geral</h1>
       <section className="grid gap-6 md:grid-cols-3">
         

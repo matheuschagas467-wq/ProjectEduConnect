@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PageNavigation from "@/components/common/PageNavigation";
 
 export default function AboutPage() {
   useEffect(() => {
@@ -7,6 +8,7 @@ export default function AboutPage() {
 
   return (
     <main className="max-w-4xl mx-auto">
+      <PageNavigation />
       <h1 className="text-3xl font-bold mb-8 text-center">EduConnect - Rede de Ensino</h1>
       
       <div className="space-y-8">

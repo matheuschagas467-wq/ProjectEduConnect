@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import PageNavigation from "@/components/common/PageNavigation";
 
 export default function SettingsPage() {
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function SettingsPage() {
 
   return (
     <main>
+      <PageNavigation />
       <h1 className="text-2xl font-semibold mb-6">Configurações</h1>
       <section className="grid gap-6 md:grid-cols-2">
         <Card>

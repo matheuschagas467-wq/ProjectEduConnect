@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import PageNavigation from "@/components/common/PageNavigation";
+
 interface Classe { id: string; nome: string; alunos: number }
 
 export default function ClassesPage() {
@@ -20,18 +22,8 @@ export default function ClassesPage() {
 
   return (
     <main>
-      <div className="flex items-center gap-4 mb-6">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => navigate("/app/teacher/dashboard")}
-          className="flex items-center gap-2"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Voltar
-        </Button>
-        <h1 className="text-2xl font-semibold">Gerenciar Turmas</h1>
-      </div>
+      <PageNavigation />
+      <h1 className="text-2xl font-semibold mb-6">Gerenciar Turmas</h1>
       <Card>
         <CardHeader>
           <CardTitle>Turmas</CardTitle>
