@@ -21,9 +21,8 @@ const Index = () => {
   ];
 
   const teacherBenefits = [
-    "Gerenciar turmas e disciplinas",
-    "Lançar notas e frequência",
-    "Compartilhar material didático", 
+    "Acompanhamento do cronograma escolar",
+    "Gerenciamento de turmas", 
     "Comunicar-se com responsáveis"
   ];
 
@@ -39,7 +38,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <UserTypeCard
                 title="Sou Docente"
-                description="Gerencie suas turmas, registre avaliações, compartilhe conteúdos e acompanhe o progresso dos seus alunos."
+                description="Mantenha-se conectado com o Cronograma Escolar"
                 icon={Icons.teacher}
                 benefits={teacherBenefits}
                 buttonText="Entrar como Docente"
