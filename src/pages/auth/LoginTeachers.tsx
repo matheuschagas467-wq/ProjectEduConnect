@@ -142,10 +142,6 @@ export default function LoginTeachers() {
             </Button>
           </div>
         </section>
-
-     
-          </Link>
-        </div>
       </div>
     </main>
   );
