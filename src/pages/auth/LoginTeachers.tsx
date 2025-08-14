@@ -143,15 +143,7 @@ export default function LoginTeachers() {
           </div>
         </section>
 
-        {/* Switch Login Type */}
-        <div className="mt-6 text-center">
-          <p className="text-sm text-muted-foreground mb-2">
-            Você é um responsável?
-          </p>
-          <Link to="/login/parents">
-            <Button variant="outline" size="sm" className="hover:bg-primary hover:text-primary-foreground transition-all duration-200">
-              Acesso para Responsáveis
-            </Button>
+     
           </Link>
         </div>
       </div>
