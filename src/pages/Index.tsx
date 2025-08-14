@@ -42,7 +42,7 @@ const Index = () => {
                 description="Acompanhe o desempenho escolar do seu filho, receba notificações importantes e mantenha-se conectado com a escola."
                 icon={Icons.users}
                 benefits={parentBenefits}
-                buttonText="Cadastrar como Responsável"
+                buttonText="Entrar como Responsável"
                 onSelect={() => navigate("/login/parents")}
               />
               
@@ -51,7 +51,7 @@ const Index = () => {
                 description="Gerencie suas turmas, registre avaliações, compartilhe conteúdos e acompanhe o progresso dos seus alunos."
                 icon={Icons.teacher}
                 benefits={teacherBenefits}
-                buttonText="Cadastrar como Docente"
+                buttonText="Entrar como Docente"
                 onSelect={() => navigate("/login/teachers")}
               />
             </div>
