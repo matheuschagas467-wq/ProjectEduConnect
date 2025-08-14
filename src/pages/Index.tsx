@@ -38,15 +38,6 @@ const Index = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <UserTypeCard
-                title="Sou Responsável"
-                description="Acompanhe o desempenho escolar do seu filho, receba notificações importantes e mantenha-se conectado com a escola."
-                icon={Icons.users}
-                benefits={parentBenefits}
-                buttonText="Entrar como Responsável"
-                onSelect={() => navigate("/login/parents")}
-              />
-              
-              <UserTypeCard
                 title="Sou Docente"
                 description="Gerencie suas turmas, registre avaliações, compartilhe conteúdos e acompanhe o progresso dos seus alunos."
                 icon={Icons.teacher}
