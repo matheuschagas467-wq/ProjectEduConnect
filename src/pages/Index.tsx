@@ -41,7 +41,7 @@ const Index = () => {
                 description="Mantenha-se conectado com o Cronograma Escolar"
                 icon={Icons.teacher}
                 benefits={teacherBenefits}
-                buttonText="Entrar como Docente"
+                buttonText="Acessar"
                 onSelect={() => navigate("/login/teachers")}
               />
             </div>
