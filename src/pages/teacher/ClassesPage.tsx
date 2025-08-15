@@ -6,13 +6,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import PageNavigation from "@/components/common/PageNavigation";
 
-interface Classe { id: string; nome: string; alunos matriculados: number }
+interface Classe { id: string; nome: string; alunos: number }
 
 export default function ClassesPage() {
   const navigate = useNavigate();
   const [classes, setClasses] = useState<Classe[]>([
-    { id: "c1", nome: "5º ANO A", alunos matriculados: 2 },
-    { id: "c2", nome: "5º ANO B", alunos matriculados: 0 },
+    { id: "c1", nome: "5º ANO A", alunos: 2 },
+    { id: "c2", nome: "5º ANO B", alunos: 0 },
   ]);
   const [nome, setNome] = useState("");
 
