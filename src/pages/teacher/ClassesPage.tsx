@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import PageNavigation from "@/components/common/PageNavigation";
 
-interface Classe { id: string; nome: string; alunos: number }
+interface Classe { id: string; nome: string; alunos matriculados: number }
 
 export default function ClassesPage() {
   const navigate = useNavigate();
