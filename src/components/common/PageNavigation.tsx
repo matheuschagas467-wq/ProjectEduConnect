@@ -67,10 +67,21 @@ export default function PageNavigation() {
 
       {/* Quick Navigation */}
       <div className="flex flex-wrap gap-2">
-        {quickNavItems.map(item => {
+      {quickNavItems.map(item => {
         const isActive = currentPath === item.path;
         const Icon = item.icon;
-        return;
+        return (
+          <Button
+            key={item.path}
+            variant={isActive ? "default" : "outline"}
+            size="sm"
+            onClick={() => navigate(item.path)}
+            className="flex items-center gap-2"
+          >
+            <Icon className="h-4 w-4" />
+            {item.label}
+          </Button>
+        );
       })}
       </div>
     </div>;
