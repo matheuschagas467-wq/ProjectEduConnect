@@ -30,9 +30,8 @@ export function AppSidebar() {
   ];
 
   const teacherItems = [
-    { title: "Dashboard", url: `${baseTeacher}/dashboard`, icon: BarChart3 },
-    { title: "Turmas", url: `${baseTeacher}/classes`, icon: Users },
     { title: "Cronograma", url: `${baseTeacher}/calendar`, icon: Calendar },
+    { title: "Turmas", url: `${baseTeacher}/classes`, icon: Users },
     { title: "Comunicação", url: `${baseTeacher}/communication`, icon: MessageSquare },
     { title: "Configurações", url: `${baseTeacher}/settings`, icon: Settings },
     { title: "Sobre/Contato", url: `/app/about`, icon: Info },
