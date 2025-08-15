@@ -17,20 +17,73 @@ export type Database = {
       alunos: {
         Row: {
           cpf: string
+          email_responsavel: string | null
           id_alunos: number
           nome_alunos: string
+          nome_do_aluno: string | null
+          responsavel_nome: string | null
+          serie: string | null
+          telefone_responsavel: string | null
         }
         Insert: {
           cpf: string
+          email_responsavel?: string | null
           id_alunos: number
           nome_alunos: string
+          nome_do_aluno?: string | null
+          responsavel_nome?: string | null
+          serie?: string | null
+          telefone_responsavel?: string | null
         }
         Update: {
           cpf?: string
+          email_responsavel?: string | null
           id_alunos?: number
           nome_alunos?: string
+          nome_do_aluno?: string | null
+          responsavel_nome?: string | null
+          serie?: string | null
+          telefone_responsavel?: string | null
         }
         Relationships: []
+      }
+      mensagens_enviadas: {
+        Row: {
+          aluno_id: number
+          created_at: string
+          email_responsavel: string
+          id: string
+          mensagem: string
+          status: string
+          telefone_responsavel: string
+        }
+        Insert: {
+          aluno_id: number
+          created_at?: string
+          email_responsavel: string
+          id?: string
+          mensagem: string
+          status?: string
+          telefone_responsavel: string
+        }
+        Update: {
+          aluno_id?: number
+          created_at?: string
+          email_responsavel?: string
+          id?: string
+          mensagem?: string
+          status?: string
+          telefone_responsavel?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mensagens_enviadas_aluno_id_fkey"
+            columns: ["aluno_id"]
+            isOneToOne: false
+            referencedRelation: "alunos"
+            referencedColumns: ["id_alunos"]
+          },
+        ]
       }
     }
     Views: {
