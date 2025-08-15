@@ -11,8 +11,8 @@ interface Classe { id: string; nome: string; alunos: number }
 export default function ClassesPage() {
   const navigate = useNavigate();
   const [classes, setClasses] = useState<Classe[]>([
-    { id: "c1", nome: "5º A", alunos: 2 },
-    { id: "c2", nome: "5º B", alunos: 0 },
+    { id: "c1", nome: "5º ANO A", alunos matriculados: 2 },
+    { id: "c2", nome: "5º ANO B", alunos matriculados: 0 },
   ]);
   const [nome, setNome] = useState("");
 
